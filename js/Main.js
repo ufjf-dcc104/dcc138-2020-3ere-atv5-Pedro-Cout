@@ -1,6 +1,7 @@
 import Cena from "./Cena.js";
 import Sprite from "./Sprite.js";
 import AssetManager from "./AssetManager.js";
+import Mixer from "./Mixer.js";
 
 const assets = new AssetManager();
 
@@ -9,6 +10,8 @@ assets.carregaImagem("esqueleto", "assets/skelly.png");
 assets.carregaImagem("orc", "assets/orc.png");
 assets.carregaAudio("moeda", "assets/coin.wav");
 assets.carregaAudio("explosao", "assets/boom.wav");
+
+const mixer = new Mixer(10);
 
 const canvas = document.querySelector("canvas");
 const cena1 = new Cena(canvas, assets);
@@ -21,7 +24,7 @@ cena1.adicionar(new Sprite({y: 40, w:30, color: "red"}));
 
 cena1.iniciar();
 
-document.addEventListener("keydown", (e)=>{
+document.addEventListener("keydown", (e) => {
     switch (e.key) {
         case "s":
             cena1.iniciar();
@@ -30,10 +33,10 @@ document.addEventListener("keydown", (e)=>{
             cena1.parar();
             break;
         case "c":
-            assets.audio("moeda").play();
+            mixer.play(assets.audio("moeda"));
             break;
         case "b":
-            assets.audio("explosao").play();
+            mixer.play(assets.audio("explosao"));
             break;
     }
 });

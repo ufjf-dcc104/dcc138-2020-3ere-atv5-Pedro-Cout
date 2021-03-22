@@ -23,8 +23,15 @@ export default class Mapa{
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
                         ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
-                    break;
-                    default:
+                        break;
+                    case 2:
+                        ctx.fillStyle = "yellow";
+                        ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = "red";
+                        ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                        break;
+                      default:
                         ctx.fillStyle = "black";
                         ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
                         ctx.lineWidth = 1;
@@ -34,7 +41,7 @@ export default class Mapa{
             }
         }
     }
-    carregaMapa(modelo) {
+        carregaMapa(modelo) {
         this.LINHAS = modelo.length;
         this.COLUNAS = modelo[0]?.length ?? 0;
         this.tiles = [];

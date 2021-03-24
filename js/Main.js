@@ -66,15 +66,15 @@ controlar: perseguePC});
 cena1.adicionar(en1);
 cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "red", controlar: perseguePC}));
 cena1.adicionar(new Sprite({x: 115, y: 160, vy: -10, color: "blue"}));
-cena1.iniciar();
+game.iniciar();
 
 document.addEventListener("keydown", (e) => {
     switch (e.key) {
         case "s":
-            cena1.iniciar();
+            game.iniciar();
             break;
         case "S":
-            cena1.parar();
+            game.parar();
             break;
         case "c":
             assets.play("moeda");

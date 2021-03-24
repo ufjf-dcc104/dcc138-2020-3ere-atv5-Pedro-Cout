@@ -10,11 +10,12 @@ export default class Cena {
         this.dt = 0;
         this.idAnim = null;
         this.assets = assets;
-        this.maoa = null;
+        this.mapa = null;
+        this.game = null;
     }
     desenhar() {
         this.ctx.fillStyle = "lightblue";
-        this.ctx.fillRect(0,0, this.canvas.width, this.canvas.height);
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.mapa?.desenhar(this.ctx);
         

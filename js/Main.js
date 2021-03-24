@@ -23,8 +23,8 @@ canvas.height = 10 * 32;
 input.configurarTeclado({
     "ArrowLeft": "MOVE_ESQUERDA",
     "ArrowRight": "MOVE_DIREITA",
-    "ArrowDown": "MOVE_BAIXO",
-    "ArrowUp": "MOVE_CIMA"
+    "ArrowUp": "MOVE_ACIMA",
+    "ArrowDown": "MOVE_ABAIXO"
  });
 const cena1 = new Cena(canvas, assets);
 
@@ -39,6 +39,13 @@ pc.controlar = function(dt) {
         this.vx = +50;
     } else {
         this.vx = 0;
+    }
+    if(input.comandos.get("MOVE_ACIMA")) {
+        this.vy = -50;
+    } else if(input.comandos.get("MOVE_ABAIXO")) {
+        this.vy = +50;
+    } else {
+        this.vy = 0;
     }
 };
 const en1 = new Sprite({x: 160, vx: -10, color: "red"});

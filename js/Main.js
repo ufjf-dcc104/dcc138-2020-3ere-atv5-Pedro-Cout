@@ -27,7 +27,8 @@ input.configurarTeclado({
     "ArrowLeft": "MOVE_ESQUERDA",
     "ArrowRight": "MOVE_DIREITA",
     "ArrowUp": "MOVE_ACIMA",
-    "ArrowDown": "MOVE_ABAIXO"
+    "ArrowDown": "MOVE_ABAIXO",
+    " ": "PROXIMA_CENA"
  });
 
 const game = new Game(canvas, assets, input);

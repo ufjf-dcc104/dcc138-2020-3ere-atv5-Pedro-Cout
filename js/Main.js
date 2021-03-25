@@ -1,13 +1,14 @@
-import Cena from "./Cena.js";
-import Sprite from "./Sprite.js";
+//import Cena from "./Cena.js";
+//import Sprite from "./Sprite.js";
 import AssetManager from "./AssetManager.js";
 import Mixer from "./Mixer.js";
-import Mapa from "./Mapa.js";
-import modeloMapa1 from "../maps/mapa1.js";
+//import Mapa from "./Mapa.js";
+//import modeloMapa1 from "../maps/mapa1.js";
 import InputManager from "./InputManager.js";
 import Game from "./Game.js";
 import CenaJogo from "./CenaJogo.js";
 import CenaCarregando from "./CenaCarregando.js";
+import CenaFim from "./CenaFim.js";
 
 const input = new InputManager();
 const mixer = new Mixer(10);
@@ -28,21 +29,24 @@ input.configurarTeclado({
     "ArrowRight": "MOVE_DIREITA",
     "ArrowUp": "MOVE_ACIMA",
     "ArrowDown": "MOVE_ABAIXO",
-    " ": "PROXIMA_CENA"
+    " ": "PROXIMA_CENA",
  });
 
 const game = new Game(canvas, assets, input);
 
-const cena0 = new CenaCarregando(canvas, assets);
-const cena1 = new CenaJogo(canvas, assets);
+const cena0 = new CenaCarregando();
+const cena1 = new CenaJogo();
+const cena2 = new CenaFim();
 game.adicionarCena("carregando", cena0);
 game.adicionarCena("jogo", cena1);
+game.adicionarCena("fim", cena2);
 
-const mapa1 = new Mapa(10, 14, 32);
+/*const mapa1 = new Mapa(10, 14, 32);
 mapa1.carregaMapa(modeloMapa1);
 cena1.configuraMapa(mapa1);
 
 const pc = new Sprite({x: 50, y: 150});
+pc.tags.add("pc");
 pc.controlar = function(dt) {
     if(input.comandos.get("MOVE_ESQUERDA")) {
         this.vx = -50;
@@ -66,11 +70,10 @@ function perseguePC(dt) {
     this.vy = 25 * Math.sign(pc.y - this.y);
 }
 
-const en1 = new Sprite({x: 360, color: "red", 
-controlar: perseguePC});
+const en1 = new Sprite({x: 360, color: "red", controlar: perseguePC, tags:["enemy"]});
 cena1.adicionar(en1);
-cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "red", controlar: perseguePC}));
-cena1.adicionar(new Sprite({x: 115, y: 160, vy: -10, color: "blue"}));
+cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "red", controlar: perseguePC, tags:["enemy"]}));
+cena1.adicionar(new Sprite({x: 115, y: 160, vy: -10, color: "blue", controlar: perseguePC, tags:["enemy"]}));*/
 game.iniciar();
 
 document.addEventListener("keydown", (e) => {

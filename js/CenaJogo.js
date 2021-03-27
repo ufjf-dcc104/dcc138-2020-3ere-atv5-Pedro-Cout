@@ -13,6 +13,7 @@ export default class CenaJogo extends Cena {
             this.aRemover.push(b);
         }
         if(a.tags.has("pc") && b.tags.has("enemy")) {
+            this.assets.play("explosao");
             this.game.selecionaCena("fim");
         }
     }

@@ -21,19 +21,24 @@ export default class Mapa{
                         ctx.fillStyle = "grey";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
+                        ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                        ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
                         break;
                     case 2:
                         ctx.fillStyle = "yellow";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "red";
+                        ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                        ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
                         break;
                       default:
                         ctx.fillStyle = "black";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "grey";
+                        ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                        ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
                 }
-                ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
-                ctx.strokeRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
+                
             }
         }
     }

@@ -1,6 +1,6 @@
 import Cena from "./Cena.js";
 import Sprite from "./Sprite.js";
-import Mapa from "./Mapa.js";
+import Mapa from "./Mapas.js";
 import modeloMapa1 from "../maps/mapa1.js";
 
 

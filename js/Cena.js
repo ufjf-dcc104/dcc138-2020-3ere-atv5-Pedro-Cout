@@ -155,4 +155,9 @@ export default class Cena {
         }
         return color;
     }
+    realocarSprite(t) {
+        setInterval (() => {
+            this.adicionarSpriteAleatorio(1);
+        }, t);
+    }
 }

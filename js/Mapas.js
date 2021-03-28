@@ -18,7 +18,7 @@ export default class Mapa{
             for(let c = 0; c < this.COLUNAS; c++) {
                 switch (this.tiles[l][c]){
                     case 1:
-                        ctx.fillStyle = "grey";
+                        ctx.fillStyle = "green";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
                         ctx.fillRect(c * this.SIZE, l * this.SIZE, this.SIZE, this.SIZE);
